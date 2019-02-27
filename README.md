@@ -7,7 +7,7 @@
 - orientation: 방향성이 있음
 - match_parent: 부모 영역의 공간을 차지하지만, 차지할 수 있는 영역까지만 차지
 - gravity: 자신의 뷰에서 포함하고 있는 데이터를 정렬
-- layout_gravity: LinearLayout에서만 동작한다. 자신을 포함하고 있는 부모 위젯 레이아웃에서 옵션값에 따라 정렬 (자기 자신의 외부에 관련된 속성은 layout이 붙는다. ex.android:layout-margin, android:padding)
+- layout_gravity: LinearLayout에서만 동작한다. 자신을 포함하고 있는 부모 위젯 레이아웃에서 옵션값에 따라 정렬 (자기 자신의 외부에 관련된 속성은 layout이 붙는다. ex. android:layout-margin, android:padding)
 
 #### 2. RelativeLayout
 - 기준을 잡고 그 기준을 대상으로 배치하고, align 같은 속성들을 이용해서 정렬한다.
