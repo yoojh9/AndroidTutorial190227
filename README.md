@@ -20,10 +20,10 @@
 - startActivityForResult(Intent): 다른 액티비티를 실행시키고 결과값을 받는다. onActivityResult() 리스너를 이용하여 데이터를 처리할 수 있다.
 
 ```
-   @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+@Override
+ protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+     super.onActivityResult(requestCode, resultCode, data);
+ }
 ```
 
 - getIntent(): 전달받은 인텐트를 가져 옴
@@ -43,8 +43,25 @@
 ![alt text](https://developer.android.com/guide/components/images/activity_lifecycle.png)
 
 ## 5. menu
-- onCreateOptionsMenu()
+- onCreateOptionsMenu(): activity에 메뉴를 생성할 수 있음.
+- getMenuInflater()로 메뉴 inflater를 얻을 수 있다.
+- onOptionsItemSelected(): 메뉴 선택 시 동작 정의
 
-#### 그외
+## 6. Thread
+- 독립적으로 실행되는 실행 단위
+- 네트워크 같은 경우 Thread로만 동작하게 만듦
+- 단 직접 만든 Thread는 UI에 직접 접근할 수 없어서 'CalledFromWrongThreadException:Only the original thread that created a view hierarchy can touch its views.' 와 같은 예외가 발생한다.
+- Thread에서 UI를 조작하기 위해서는 핸들러가 필요하다.
+
+```
+Handler handler = new Handler(){
+     @Override
+     public void handleMessage(Message msg) {
+         super.handleMessage(msg);
+     }
+}
+```
+
+#### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
