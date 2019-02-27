@@ -15,6 +15,13 @@
 - android:layout_centerHorizontal : 수평 상 가운데 배치
 - [RelativeLayout.LayoutParams 종류](https://developer.android.com/reference/android/widget/RelativeLayout.LayoutParams.html)
 
+## 2. Activity
+- startActivity(): 다른 액티비티를 실행시킨다
+- Intent: 
+  - 명시적 인텐트: 어떤 인텐트를 실행할지 명시적으로 표기 (ex. new Intent(MainActivity.this, MyActivity.class); )
+  - 암시적 인텐트
+  - intent.putExtra()를 통해 데이터를 주고 받을 수 있음.
+
 #### 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
