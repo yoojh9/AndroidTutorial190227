@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
 
-        adapter = new ArrayAdapter<String>(MainActivity.this,
+        adapter = new ArrayAdapter<>(MainActivity.this,
                 android.R.layout.simple_list_item_1, // 레이아웃을 따로 안만들고 내장된 레이아웃을 사용함
                 list);
         listView.setAdapter(adapter);
