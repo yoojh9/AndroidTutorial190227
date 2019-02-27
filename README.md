@@ -7,7 +7,7 @@
 - orientation: 방향성이 있음
 - match_parent: 부모 영역의 공간을 차지하지만, 차지할 수 있는 영역까지만 차지
 - gravity: 자신의 뷰에서 포함하고 있는 데이터를 정렬
-- layout_gravity: LinearLayout에서만 동작한다. 자신을 포함하고 있는 부모 위젯 레이아웃에서 옵션값에 따라 정렬 (자기 자신의 외부에 관련된 속성은 layout이 붙는다. ex.android:layout-margin, android:padding)
+- layout_gravity: LinearLayout에서만 동작한다. 자신을 포함하고 있는 부모 위젯 레이아웃에서 옵션값에 따라 정렬 (자기 자신의 외부에 관련된 속성은 layout이 붙는다. ex. android:layout-margin, android:padding)
 
 #### 2. RelativeLayout
 - 기준을 잡고 그 기준을 대상으로 배치하고, align 같은 속성들을 이용해서 정렬한다.
@@ -32,6 +32,11 @@
   - 명시적 인텐트: 어떤 인텐트를 실행할지 명시적으로 표기 (ex. new Intent(MainActivity.this, MyActivity.class); )
   - 암시적 인텐트
   - intent.putExtra()를 통해 데이터를 주고 받을 수 있음.
+
+## 3. ListView
+- Adapter
+   - 사용자가 정의한 데이터를 ListView에 출력하기 위해 사용하는 객체로, 사용자 데이터와 화면 출력 View로 이루어진 두 개의 부분을 이어주는 객체이다.
+   - https://recipes4dev.tistory.com/42
 
 #### 그외
 - 디자인은 스케치 툴 사용
