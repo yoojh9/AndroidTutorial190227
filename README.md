@@ -33,6 +33,11 @@
   - 암시적 인텐트
   - intent.putExtra()를 통해 데이터를 주고 받을 수 있음.
 
+## 3. ListView
+- Adapter
+   - 사용자가 정의한 데이터를 ListView에 출력하기 위해 사용하는 객체로, 사용자 데이터와 화면 출력 View로 이루어진 두 개의 부분을 이어주는 객체이다.
+   - https://recipes4dev.tistory.com/42
+
 #### 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
