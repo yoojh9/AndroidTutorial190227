@@ -37,6 +37,7 @@
 - Adapter
    - 사용자가 정의한 데이터를 ListView에 출력하기 위해 사용하는 객체로, 사용자 데이터와 화면 출력 View로 이루어진 두 개의 부분을 이어주는 객체이다.
    - https://recipes4dev.tistory.com/42
+   - Adapter를 상속받아 새로 custom adapter를 구현할 수 있음
 
 #### 그외
 - 디자인은 스케치 툴 사용
