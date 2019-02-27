@@ -16,8 +16,19 @@
 - [RelativeLayout.LayoutParams 종류](https://developer.android.com/reference/android/widget/RelativeLayout.LayoutParams.html)
 
 ## 2. Activity
-- startActivity(): 다른 액티비티를 실행시킨다
-- Intent: 
+- startActivity(Intent): 다른 액티비티를 실행시킨다
+- startActivityForResult(Intent): 다른 액티비티를 실행시키고 결과값을 받는다. onActivityResult() 리스너를 이용하여 데이터를 처리할 수 있다.
+
+```
+   @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+```
+
+- getIntent(): 전달받은 인텐트를 가져 옴
+- setResult(): 자신을 호출한 액티비티에 결과값을 보내거나 추가적인 데이터를 보낼 수 있다. 역시 인텐트를 이용해야 한다.
+- Intent: 컴포넌트 간의 데이터를 주고받거나 액티비티를 호출할 때 사용
   - 명시적 인텐트: 어떤 인텐트를 실행할지 명시적으로 표기 (ex. new Intent(MainActivity.this, MyActivity.class); )
   - 암시적 인텐트
   - intent.putExtra()를 통해 데이터를 주고 받을 수 있음.
