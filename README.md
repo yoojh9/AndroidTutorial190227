@@ -39,6 +39,12 @@
    - https://recipes4dev.tistory.com/42
    - Adapter는 BaseAdapter 클래스를 상속받아 새로 custom adapter를 구현할 수 있음
 
+## 4. 안드로이드 Life Cycle
+![alt text](https://developer.android.com/guide/components/images/activity_lifecycle.png)
+
+## 5. menu
+- onCreateOptionsMenu()
+
 #### 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
