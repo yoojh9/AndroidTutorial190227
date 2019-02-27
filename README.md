@@ -10,8 +10,10 @@
 - layout_gravity: LinearLayout에서만 동작한다. 자신을 포함하고 있는 부모 위젯 레이아웃에서 옵션값에 따라 정렬 (자기 자신의 외부에 관련된 속성은 layout이 붙는다. ex.android:layout-margin, android:padding)
 
 #### 2. RelativeLayout
--
-
+- 기준을 잡고 그 기준을 대상으로 배치하고, align 같은 속성들을 이용해서 정렬한다.
+- android:layout_centerInParent: 화면 한 가운데에 배치
+- android:layout_centerHorizontal : 수평 상 가운데 배치
+- [RelativeLayout.LayoutParams 종류](https://developer.android.com/reference/android/widget/RelativeLayout.LayoutParams.html)
 
 #### 그외
 - 디자인은 스케치 툴 사용
