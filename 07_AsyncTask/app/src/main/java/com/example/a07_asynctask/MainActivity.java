@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     class MyTask extends AsyncTask<Void, Integer, Void> {
 
-        // Integer ... : 배열
+        // Integer ... : 가변인자 / 배열
         @Override
         protected void onProgressUpdate(Integer... values) {
             btnStart.setText("count: " + values[0]);
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for(int i=0; i<=100; i++){
                 Log.d("myTask", "count : "+ i);
                 publishProgress(i);  // 중간에 값을 넘김 -> onProgressUpdate() 에서 데이터를 받음
+                // 가변인자 publishProgress(1,2,3,4) 이렇게 보낼 수 있음.
 
                 try {
                     Thread.sleep(100);
