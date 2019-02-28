@@ -1,11 +1,10 @@
 package com.example.a08_xml;
 
-import android.app.ProgressDialog;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +21,12 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
+    //ListView listView;
+    RecyclerView recyclerView;
     List<WeatherData> weatherList = new ArrayList<>();
 
     enum DataType { none, hourType, dayType, tempType, wfKorType }
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         new MyParserTask().execute("https://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500");
 
-        listView = findViewById(R.id.listView);
+        recyclerView = findViewById(R.id.recyclerView);
     }
 
     // Param: http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500
@@ -49,8 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<WeatherData> list) {
-            WeatherAdapter adapter = new WeatherAdapter();
-            listView.setAdapter(adapter);
+           // 리스트뷰 일 때 설정
+           // WeatherListViewAdapter adapter = new WeatherListViewAdapter(list, MainActivity.this);
+            WeatherRecyclerViewAdapter adapter = new WeatherRecyclerViewAdapter(list);
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         }
 
         @Override
@@ -115,57 +117,6 @@ public class MainActivity extends AppCompatActivity {
             }
             Log.d("xml", "count : "+weatherList.size());
             return weatherList;
-        }
-    }
-
-    class WeatherAdapter extends BaseAdapter {
-
-        @Override
-        public int getCount() {
-            return weatherList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return weatherList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        // 1) 인플레이션 시키고
-        // 2) 해당 데이터를 찾아서 세팅해 줌
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // 1) 최초의 convertView는 null이므로 처음에는 인플리케이션 시켜줘야함
-            if(convertView == null){
-                LayoutInflater inf = LayoutInflater.from(MainActivity.this);
-                convertView = inf.inflate(R.layout.item_weather, parent, false);
-            }
-
-            // 2) weather 데이터를 찾아서 세팅해준다
-            WeatherData data = weatherList.get(position);
-
-            TextView textViewWfKor = convertView.findViewById(R.id.textViewWfKor);
-            TextView textViewTemp = convertView.findViewById(R.id.textViewTemp);
-            TextView textViewDate = convertView.findViewById(R.id.textViewDate);
-            ImageView imageViewIcon = convertView.findViewById(R.id.imageViewIcon);
-
-            textViewWfKor.setText(data.getWfKor());
-            textViewTemp.setText(data.getTemp()+" 'c");
-            textViewDate.setText(data.getDay() +" 일 " + data.getHour() + "시");
-
-            int res = R.mipmap.ic_launcher;
-            if(data.getWfKor().contains("구름")){
-                res = R.drawable.ic_cloud;
-            } else if(data.getWfKor().contains("맑음")){
-                res = R.drawable.ic_wb_sunny;
-            }
-            imageViewIcon.setImageResource(res);
-
-            return convertView;
         }
     }
 }
