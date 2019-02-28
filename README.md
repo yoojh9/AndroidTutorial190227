@@ -39,6 +39,7 @@
    - 사용자가 정의한 데이터를 ListView에 출력하기 위해 사용하는 객체로, 사용자 데이터와 화면 출력 View로 이루어진 두 개의 부분을 이어주는 객체이다.
    - https://recipes4dev.tistory.com/42
    - Adapter는 BaseAdapter 클래스를 상속받아 새로 custom adapter를 구현할 수 있음
+   - 스크롤 내리면서 데이터가 더 필요하면 getView() 호출하여 새로 생성.
 
 ## 4. 안드로이드 Life Cycle
 ![alt text](https://developer.android.com/guide/components/images/activity_lifecycle.png)
@@ -95,6 +96,17 @@ class MyTask extends AsyncTask<Void, Integer, Void>
   <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
+## 9. RecyclerView
+- RecyclerView는 자동으로 추가되지 않으므로 Product Structure 메뉴를 이용한다.
+- 새로 dependency를 추가한다.(implementation 'com.android.support:recyclerview-v7:28.0.0')
+- custom ListView와 비슷하다고 보면 됨.
+- 리스트뷰 + 그리드뷰 가 합쳐진 느낌
+
+- ViewHolder
+ - ListView의 adapter가 했던 getView()의 역할을 대신함
+ - ViewHolder에 ClickListner를 붙이면 어떤 item이 클릭됐는지 알 수 있다 (ListView.OnItemClickListener() 와 같음)
+
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
+- 뷰를 수정할 경우에는 Activity Context를, 나머지 경우에는 Application Context를 사용하는 것을 권장한다.
