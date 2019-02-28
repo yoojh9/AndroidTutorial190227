@@ -102,9 +102,9 @@ class MyTask extends AsyncTask<Void, Integer, Void>
 - custom ListView와 비슷하다고 보면 됨.
 - 리스트뷰 + 그리드뷰 가 합쳐진 느낌
 
-- ViewHolder
- - ListView의 adapter가 했던 getView()의 역할을 대신함
- - ViewHolder에 ClickListner를 붙이면 어떤 item이 클릭됐는지 알 수 있다 (ListView.OnItemClickListener() 와 같음)
+#### 1. ViewHolder
+- ListView의 adapter가 했던 getView()의 역할을 대신함
+- ViewHolder에 ClickListner를 붙이면 어떤 item이 클릭됐는지 알 수 있다 (ListView.OnItemClickListener() 와 같음)
 
 #### * 그외
 - 디자인은 스케치 툴 사용
