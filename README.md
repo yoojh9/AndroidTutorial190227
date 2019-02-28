@@ -106,6 +106,9 @@ class MyTask extends AsyncTask<Void, Integer, Void>
 - ListView의 adapter가 했던 getView()의 역할을 대신함
 - ViewHolder에 ClickListner를 붙이면 어떤 item이 클릭됐는지 알 수 있다 (ListView.OnItemClickListener() 와 같음)
 
+## 10. WebViewClient
+-
+
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
