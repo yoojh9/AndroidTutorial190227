@@ -34,6 +34,7 @@
   - intent.putExtra()를 통해 데이터를 주고 받을 수 있음.
 
 ## 3. ListView
+- setOnItemClickListener()는 ListView만 가지고 있다.
 - Adapter
    - 사용자가 정의한 데이터를 ListView에 출력하기 위해 사용하는 객체로, 사용자 데이터와 화면 출력 View로 이루어진 두 개의 부분을 이어주는 객체이다.
    - https://recipes4dev.tistory.com/42
