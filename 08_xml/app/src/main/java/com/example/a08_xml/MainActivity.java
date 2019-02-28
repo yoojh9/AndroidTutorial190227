@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
-        new MyParserTask().execute("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500");
+        new MyParserTask().execute("https://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500");
     }
 
     // Param: http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1162058500
@@ -34,14 +34,32 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             String res = "";
+
             try {
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 XmlPullParser xpp = factory.newPullParser();
                 URL url = new URL(strings[0]);
                 xpp.setInput(url.openStream(), "utf-8");
                 int eventType = xpp.getEventType();
-                while(eventType != XmlPullParser.END_DOCUMENT){
+                boolean bRead = false;
 
+                while(eventType != XmlPullParser.END_DOCUMENT){
+                    switch (eventType){
+                        case XmlPullParser.START_TAG:
+                            String tag = xpp.getName();
+                            if(tag.equals("hour") || tag.equals("day")
+                                    || tag.equals("temp") || tag.equals("wfKor")){
+                                bRead = true;
+                            }
+                            break;
+                        case XmlPullParser.TEXT:
+                            if(bRead) {
+                                res += xpp.getText() + " ";
+                                bRead = false;
+                            }
+                            break;
+                    }
+                    eventType = xpp.next();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
