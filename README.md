@@ -62,6 +62,38 @@ Handler handler = new Handler(){
 }
 ```
 
+- Thread 예제로 progressBar 예제도 많이 사용 됨
+- Logical한 코드만 Thread에 넣고, UI 조작 관련 코드는 Handler에 넣는 것을 권장함
+- Thread & Handler의 기능을 같이 해주는 AsyncTask 클래스도 있다.
+
+## 7. AsyncTask
+- extends AsyncTask<Params, Progress, Result> 해서 사용한다
+
+```
+class MyTask extends AsyncTask<Void, Integer, Void>
+```
+#### 1. Thread 로직 관련
+- Generic 타입이므로 기본형은 Wrapper 클래스로 넘겨야 한다.
+- params: 진행 전에 넘기고 싶은 데이터
+- progress : 진행 중간에 데이터를 넘기고 싶을 때
+- result : 결과 리턴
+
+#### 2. UI 조작
+- onPreExecute() : doInBackground() 시작 전에
+- onPostExecute() : doInBackground() 시작 후에
+- onProgressUpdate(): doInBackground() 실행 중에 publishProgress()로 전달한 데이터를 받아 처리한다.
+
+## 8. xmlpullparser
+- xml 데이터를 읽고 파싱할 수 있다
+- https://developer.android.com/reference/org/xmlpull/v1/XmlPullParser
+- 08_xml 프로젝트처럼 AndroidMenifest.xml에 다음 퍼미션을 추가해야 기상청의 기상정보 RSS를 받아올 수 있다.
+- 자바 URL 객체에 url을 넣고 xmlpullparser에 전달하면 xmlpullparser가 알아서 읽어온다. (스트림을 열어서 읽고 쓰고 작업을 xmlpullparser가 함)
+
+```
+  <!-- 인터넷 사용 -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+```
+
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
