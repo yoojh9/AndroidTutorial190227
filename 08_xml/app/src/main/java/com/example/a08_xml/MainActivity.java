@@ -1,5 +1,6 @@
 package com.example.a08_xml;
 
+import android.app.ProgressDialog;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
