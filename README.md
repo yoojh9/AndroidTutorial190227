@@ -121,6 +121,23 @@ class MyTask extends AsyncTask<Void, Integer, Void>
 - https://woovictory.github.io/2019/01/03/Android-Diff-of-DP-SP/
 - https://blog.cracker9.io/2018/03/13/Android_DPI/
 
+```
+// style.xml
+<!-- 상속 -->
+<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- override -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+</style>
+
+// AndroidMenifest.xml에서 style.xml을 사용함
+ <application
+     ...
+     android:theme="@style/AppTheme">
+    ...
+ </application>
+```
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
