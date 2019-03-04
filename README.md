@@ -198,6 +198,7 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 ![alt text](https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F26FB553359803D1F09AF42)
 
 - https://developer.android.com/guide/components/services?hl=ko
+- https://programmingfbf7290.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B4%9D%EC%A0%95%EB%A6%AC%EC%8A%A4%ED%83%80%ED%8B%B0%EB%93%9C%EB%B0%94%EC%9A%B4%EB%93%9C-%EC%84%9C%EB%B9%84%EC%8A%A4
 
 - START_STICKY
 - START_NOT_STICKY: 
