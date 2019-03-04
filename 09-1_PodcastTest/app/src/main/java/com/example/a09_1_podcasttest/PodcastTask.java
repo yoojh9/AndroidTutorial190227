@@ -61,25 +61,28 @@ public class PodcastTask extends AsyncTask<String, Void, List<PodcastData>> {
                             case "item" :
                                 podcastData = new PodcastData();
                                 podcastList.add(podcastData);
-
-                                switch(xpp.getName()) {
-                                    case "title":
-                                        type = DataType.titleType;
-                                        break;
-                                    case "itunes:subtitle":
-                                        type = DataType.subTitleType;
-                                        break;
-                                    case "itunes:summary":
-                                        type = DataType.summaryType;
-                                        break;
-                                    case "guid":
-                                        type = DataType.fileUrlType;
-                                        break;
-                                    case "pubDate":
-                                        type = DataType.pubDateType;
-                                        break;
+                            case "title":
+                                if(podcastData!=null) {
+                                    type = DataType.titleType;
                                 }
                                 break;
+                            case "itunes:subtitle":
+                                if(podcastData!=null) {
+                                    type = DataType.subTitleType;
+                                }
+                                break;
+                            case "itunes:summary":
+                                if(podcastData!=null) {
+                                    type = DataType.summaryType;
+                                }
+                                break;
+                            case "guid":
+                                type = DataType.fileUrlType;
+                                break;
+                            case "pubDate":
+                                type = DataType.pubDateType;
+                                break;
+
                             default:
                                 break;
                         }

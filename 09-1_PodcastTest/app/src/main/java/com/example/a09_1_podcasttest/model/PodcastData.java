@@ -46,4 +46,15 @@ public class PodcastData {
     public String getPubDate() {
         return pubDate;
     }
+
+    @Override
+    public String toString() {
+        return "PodcastData{" +
+                "title='" + title + '\'' +
+                ", subTitle='" + subTitle + '\'' +
+                ", summary='" + summary + '\'' +
+                ", fileUrl='" + fileUrl + '\'' +
+                ", pubDate='" + pubDate + '\'' +
+                '}';
+    }
 }

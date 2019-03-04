@@ -2,7 +2,6 @@ package com.example.a09_1_podcasttest;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,7 +25,6 @@ public class PodcastRecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindData(PodcastData podcastData){
-        Log.d("podcastData :" , podcastData.toString());
         title.setText(podcastData.getTitle());
         subTitle.setText(podcastData.getSubTitle());
         summary.setText(podcastData.getSummary());
