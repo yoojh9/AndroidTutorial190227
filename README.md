@@ -138,6 +138,39 @@ class MyTask extends AsyncTask<Void, Integer, Void>
     ...
  </application>
 ```
+
+## 12. SharedPreferences
+- SharedPreference를 이용하여 간단한 데이터들을 저장하고 불러올 수 있다.
+- 보안에 취약한 데이터들은 저장하지 않는 것이 바람직하다.
+- 보통 초기 설정값이나 자동로그인 여부 등 간단한 값을 저장하기 위해 사용한다.
+- 어플리케이션에 파일 형태로 데이터를 저장한다.
+- onPause() 시에 SharedPreferences에 데이터를 저장하거나, onResume() 시에 SharedPreferences에 있는 데이터를 불러올 수 있다.
+
+## 13. SQLite
+- https://www.sqlite.org/datatype3.html
+- SQLite를 ORM으로도 사용할 수 있음
+
+```
+public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
+
+    public TestSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    // SQLiteOpenHelper가 생성될 때 실행. 어플리케이션이 처음 생성될 때 실행된다.
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+    
+    // 버전업 될 때 db 내부적으로 필드를 추가하거나 수정사항이 있을 때 실행
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}
+```
+
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
