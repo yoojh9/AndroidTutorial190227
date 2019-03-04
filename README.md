@@ -112,7 +112,14 @@ class MyTask extends AsyncTask<Void, Integer, Void>
 -
 
 ## 11. Style
-
+- dp: 
+- px:
+- sp: dp와 동일한데, 안드로이드 시스템의 설정에서 '큰글씨'로 설정하면 글씨가 커짐. 하지만 sp를 쓰게 되면 레이아웃이 늘어날 수 있으므로 레이아웃 크기가 고정되어야 할 경우에는 dp를 쓴다.
+- 참고할 만한 dpi 계산기 사이트: http://dpi.lv/
+- https://rojhw.tistory.com/23
+- https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221080028435&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+- https://woovictory.github.io/2019/01/03/Android-Diff-of-DP-SP/
+- https://blog.cracker9.io/2018/03/13/Android_DPI/
 
 #### * 그외
 - 디자인은 스케치 툴 사용
