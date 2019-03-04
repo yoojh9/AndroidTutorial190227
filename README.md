@@ -194,6 +194,7 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 - 만약 미디어플레이어를 Service에 두면 Activity를 이동해도 영향을 받지 않고 정상적으로 재생 가능.
 - onCreate() -> onStartCommand() -> onDestory()
 - 한번 생성 되어있으면 다시 생성하지는 않음 (있는걸 재사용)
+
 ![alt text](https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F26FB553359803D1F09AF42)
 
 - https://developer.android.com/guide/components/services?hl=ko
