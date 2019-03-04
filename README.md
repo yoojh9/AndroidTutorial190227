@@ -177,10 +177,42 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 - permission : https://developer.android.com/training/permissions/requesting?hl=ko
 - 마시멜로우 버전 이후부터 위험 권한의 퍼미션들은 menifest에 등록해도 바로 사용할 수는 없다. RuntimePermission을 이용해서 사용자에게 요청을 해서 권한을 얻어와야 한다. 아래의 링크는 위험한 권한 및 권한 그룹에 관한 표이다.
 - https://developer.android.com/guide/topics/security/permissions.html?hl=ko#perm-groups
+- https://developer.android.com/training/permissions/requesting?hl=ko#make-the-request
 
 #### 14-2. READ_EXTERNAL_STORAGE 권한
 - 안드로이드 내 저장 공간에 있는 미디어 파일을 얻어오기 위해서는 'READ_EXTERNAL_STORAGE' 권한 설정이 되어있어야 되는데, 'READ_EXTERNAL_STORAGE'은 위험 권한이다. 그러므로 runtime 때 권한을 사용자에게 요청하여 얻어와야 한다.
+- https://webnautes.tistory.com/1225
 
+#### 14-3. MediaPlayer
+- https://developer.android.com/reference/android/media/MediaPlayer#state-diagram
+- prepared() : 미리 buffer와 같은 느낌으로 준비함
+- started() : 미디어 start
+- seekTo() : 원하는 위치로 seek
+
+## 15. Service
+- Acitivity는 한 화면에 하나만 실행되지만, Service는 화면 밖에서도 동작 가능하다.
+- 만약 미디어플레이어를 Service에 두면 Activity를 이동해도 영향을 받지 않고 정상적으로 재생 가능.
+- onCreate() -> onStartCommand() -> onDestory()
+- 한번 생성 되어있으면 다시 생성하지는 않음 (있는걸 재사용)
+
+![alt text](https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F26FB553359803D1F09AF42)
+
+- https://developer.android.com/guide/components/services?hl=ko
+
+- START_STICKY
+- START_NOT_STICKY: 
+- START_REDELIVER_INTENT 
+- https://developer88.tistory.com/36
+- https://apphappy.tistory.com/38
+
+#### 15-1. StartService
+
+#### 15-2. BindService 
+ - Activity에서 멤버변수처럼 Service를 쓸 수 있어서, 액티비티에서 Service의 메소드를 호출할 수 있다.
+ - 프로세스간 통신에도 된다..   
+ - 서비스 바인딩은 연결된 액티비티가 사라지면 서비스도 소멸된다.
+ - https://bitsoul.tistory.com/149?category=623707
+ 
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
