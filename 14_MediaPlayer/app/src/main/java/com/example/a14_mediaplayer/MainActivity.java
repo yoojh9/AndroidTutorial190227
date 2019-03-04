@@ -31,6 +31,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         seekBar = findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            // 손으로 드래그 했을 때
+            // fromUser: 사람이 interaction 한것에만 반응하고 싶을 경우
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(fromUser){
+                    if(mp != null){
+                        mp.seekTo(progress);
+                    }
+                }
+            }
+
+            // 손을 한번 눌렀을 때
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            // 손을 뗐을 때
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         setupPermission();
 
