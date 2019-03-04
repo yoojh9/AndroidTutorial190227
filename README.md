@@ -1,5 +1,5 @@
 # android-edu
-2/27~3/4일간 진행된 안드로이드 교육 내용 정리
+2/27~3/5일간 진행된 안드로이드 교육 내용 정리
 
 ## 1. 레이아웃 종류
 #### 1. LinearLayout
@@ -76,13 +76,13 @@ Handler handler = new Handler(){
 ```
 class MyTask extends AsyncTask<Void, Integer, Void>
 ```
-#### 1. Thread 로직 관련
+#### 7-1. Thread 로직 관련
 - Generic 타입이므로 기본형은 Wrapper 클래스로 넘겨야 한다.
 - params: 진행 전에 넘기고 싶은 데이터
 - progress : 진행 중간에 데이터를 넘기고 싶을 때
 - result : 결과 리턴
 
-#### 2. UI 조작
+#### 7-2. UI 조작
 - onPreExecute() : doInBackground() 시작 전에
 - onPostExecute() : doInBackground() 시작 후에
 - onProgressUpdate(): doInBackground() 실행 중에 publishProgress()로 전달한 데이터를 받아 처리한다.
@@ -145,6 +145,7 @@ class MyTask extends AsyncTask<Void, Integer, Void>
 - 보통 초기 설정값이나 자동로그인 여부 등 간단한 값을 저장하기 위해 사용한다.
 - 어플리케이션에 파일 형태로 데이터를 저장한다.
 - onPause() 시에 SharedPreferences에 데이터를 저장하거나, onResume() 시에 SharedPreferences에 있는 데이터를 불러올 수 있다.
+- https://humble.tistory.com/9
 
 ## 13. SQLite
 - https://www.sqlite.org/datatype3.html
@@ -170,6 +171,15 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 }
 ```
+
+## 14. MediaPlayer
+#### 14-1. Permission
+- permission : https://developer.android.com/training/permissions/requesting?hl=ko
+- 마시멜로우 버전 이후부터 위험 권한의 퍼미션들은 menifest에 등록해도 바로 사용할 수는 없다. RuntimePermission을 이용해서 사용자에게 요청을 해서 권한을 얻어와야 한다. 아래의 링크는 위험한 권한 및 권한 그룹에 관한 표이다.
+- https://developer.android.com/guide/topics/security/permissions.html?hl=ko#perm-groups
+
+#### 14-2. READ_EXTERNAL_STORAGE 권한
+- 안드로이드 내 저장 공간에 있는 미디어 파일을 얻어오기 위해서는 'READ_EXTERNAL_STORAGE' 권한 설정이 되어있어야 되는데, 'READ_EXTERNAL_STORAGE'은 위험 권한이다. 그러므로 runtime 때 권한을 사용자에게 요청하여 얻어와야 한다.
 
 #### * 그외
 - 디자인은 스케치 툴 사용
