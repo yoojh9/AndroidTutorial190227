@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,12 +35,36 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        Button zeroButton = findViewById(R.id.zeroButton);
-        zeroButton.setOnClickListener(numberListener);
-        Button oneButton = findViewById(R.id.oneButton);
-        oneButton.setOnClickListener(numberListener);
+        TableLayout tableLayout = findViewById(R.id.tableLayout);
+        // index로 요소를 가져옴
 
-        Button enterButton = findViewById(R.id.enterButton);
+        int number = 1;
+        for(int i=2; i<tableLayout.getChildCount() - 1; i++){
+            TableRow row = (TableRow) tableLayout.getChildAt(i);
+            for(int k=0; k<row.getChildCount(); k++){
+                Button button = (Button) row.getChildAt(k);
+                button.setText(""+number);
+                button.setOnClickListener(numberListener);
+                number++;
+            }
+        }
+
+        TableRow bottomRow = (TableRow) tableLayout.getChildAt(tableLayout.getChildCount()-1);
+        Button zeroButton = (Button) bottomRow.getChildAt(1);
+        zeroButton.setText("0");
+        zeroButton.setOnClickListener(numberListener);
+
+        Button deleteButton = (Button) bottomRow.getChildAt(0);
+        deleteButton.setText("delete");
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                workingTextView.setText("0");
+            }
+        });
+
+        Button enterButton = (Button) bottomRow.getChildAt(2);
+        enterButton.setText("enter");
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
