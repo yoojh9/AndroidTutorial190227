@@ -24,8 +24,7 @@ public class MyBoundService extends Service {
     // 액티비티에서 bindService() 호출 할 경우 호출 됨
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return binder;
     }
 
     private Random random = new Random();
