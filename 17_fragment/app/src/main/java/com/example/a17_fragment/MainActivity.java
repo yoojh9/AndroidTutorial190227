@@ -34,6 +34,38 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                     transaction.commit();
                 }
                 break;
+            case R.id.btnRemove:
+                if(fragment!=null){
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    transaction.remove(fragment);
+                    transaction.commit();
+                }
+                break;
+            case R.id.btnReplace:
+                if(fragment!=null){
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    if(fragment.getTag().equals("counter")){
+                        TextFragment textFragment = new TextFragment();
+                        transaction.replace(R.id.frame, textFragment, "text");
+                    } else {
+                        BlankFragment blankFragment = new BlankFragment();
+                        transaction.replace(R.id.frame, blankFragment, "counter");
+                    }
+                    transaction.commit();
+                }
+                break;
+            case R.id.btnHide:
+                if(fragment!=null){
+                    FragmentTransaction transaction = fm.beginTransaction();
+
+                    if(fragment.isHidden()){
+                        transaction.show(fragment);
+                    } else {
+                        transaction.hide(fragment);
+                    }
+                    transaction.commit();
+                }
+                break;
         }
     }
 }
