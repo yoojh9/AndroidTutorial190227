@@ -200,9 +200,9 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 - https://developer.android.com/guide/components/services?hl=ko
 - https://programmingfbf7290.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B4%9D%EC%A0%95%EB%A6%AC%EC%8A%A4%ED%83%80%ED%8B%B0%EB%93%9C%EB%B0%94%EC%9A%B4%EB%93%9C-%EC%84%9C%EB%B9%84%EC%8A%A4
 
-- START_STICKY
-- START_NOT_STICKY: 
-- START_REDELIVER_INTENT 
+- START_STICKY: 강제로 종료되었을 경우 재시작 시킴. 대신 Intent가 null로 들어옴
+- START_NOT_STICKY: 종료되었을 때 재시작 시키지 않음.
+- START_REDELIVER_INTENT: 종료되었을 때 재시작 시킴. Intent도 다시 전달.
 - https://developer88.tistory.com/36
 - https://apphappy.tistory.com/38
 
