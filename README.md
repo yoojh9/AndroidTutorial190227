@@ -257,6 +257,12 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 - 액티비티에서 뒤로가기 누르면 그 전 액티비티가 뜨는 것처럼, 같은 액티비티 위에 올라간 프래그먼트에서 back키를 눌렀을 때 이전 프래그먼트로 돌아가는 기능을 구현하고 싶다면 백스택을 활용.
 
 
+## 18. ViewPager
+- 스와이프 했을 때 Fragment를 교체해줌.
+1) 디테일 화면을 보여줄 activity 생성
+2) ViewPager가 가질 fragment 생성
+3) adapter 설정
+
 ---
 #### * 그외
 - 디자인은 스케치 툴 사용
