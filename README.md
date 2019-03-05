@@ -240,7 +240,7 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 
 
 #### 17-1. Fragment 추가 방법
-- 1) xml에서 직접 추가
+- xml에서 직접 추가
 
 ```
 <fragment
