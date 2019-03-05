@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".PlayerFragment">
+
+
+    <TextView
+        android:textSize="50dp"
+        android:id="@+id/textViewDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title" />
+
+    <TextView
+        android:textSize="50dp"
+        android:text="summary"
+        android:id="@+id/textViewDetailSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="50dp"
+        android:text="pubDate"
+        android:id="@+id/textViewDetailPubDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="50dp"
+        android:text="Duraion"
+        android:id="@+id/textViewDetailDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>
