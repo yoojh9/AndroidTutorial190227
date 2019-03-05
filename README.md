@@ -214,7 +214,7 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
  - 서비스 바인딩은 연결된 액티비티가 사라지면 서비스도 소멸된다.
  - https://bitsoul.tistory.com/149?category=623707
  
-## 16. 브로드캐스트리시버
+## 16. BroadcastReceiver
  - AndoridMenifest.xml receiver내부에 적절한 intent-filter를 추가해줘야 함.
 
 ```
