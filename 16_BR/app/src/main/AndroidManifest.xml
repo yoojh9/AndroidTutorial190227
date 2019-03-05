@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a16_br">
 
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <receiver
+            android:name=".BatteryChangedReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
             android:name=".MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
