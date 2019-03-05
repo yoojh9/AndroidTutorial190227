@@ -229,6 +229,8 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 </receiver>
 ```
 
+- 커스텀 액션을 추가하여 브로드캐스를 만들 수도 있음
+
 
 #### * 그외
 - 디자인은 스케치 툴 사용
