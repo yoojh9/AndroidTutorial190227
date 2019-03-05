@@ -232,6 +232,14 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 - 커스텀 액션을 추가하여 브로드캐스를 만들 수도 있음
 
 
+## 17. Fragment
+- https://developer.android.com/guide/components/fragments?hl=ko
+
+![alt text](https://developer.android.com/images/fragment_lifecycle.png?hl=ko)
+
+
+
+---
 #### * 그외
 - 디자인은 스케치 툴 사용
 - cf.인플레이트: xml 코드에 있는 UI 객체를 메모리에 올려 사용할 수 있게 한다
