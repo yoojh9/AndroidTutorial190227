@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                     fragment = new BlankFragment();
                     FragmentTransaction transaction = fm.beginTransaction();
                     transaction.add(R.id.frame, fragment, "counter");
+                    transaction.addToBackStack(null);       // 백스택에 추가
                     transaction.commit();
                 }
                 break;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                         BlankFragment blankFragment = new BlankFragment();
                         transaction.replace(R.id.frame, blankFragment, "counter");
                     }
+                    transaction.addToBackStack(null);        // 백스택에 추가
                     transaction.commit();
                 }
                 break;
