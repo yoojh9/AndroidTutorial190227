@@ -4,26 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/btnAdd"
+        android:text="add"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-       />
+        android:layout_height="wrap_content" />
 
-    <fragment
-        android:id="@+id/fragment1"
-        tools:layout="@layout/fragment_blank"
-        android:name="com.example.a17_fragment.BlankFragment"
+    <Button
+        android:id="@+id/btnRemove"
+        android:text="remove"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.a17_fragment.BlankFragment"
-        tools:layout="@layout/fragment_blank"
+    <Button
+        android:id="@+id/btnReplace"
+        android:text="replace"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnHide"
+        android:text="hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
 </LinearLayout>
