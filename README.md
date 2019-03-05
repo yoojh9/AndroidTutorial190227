@@ -234,9 +234,22 @@ public class TestSQLiteOpenHelper extends SQLiteOpenHelper {
 
 ## 17. Fragment
 - https://developer.android.com/guide/components/fragments?hl=ko
+- FrameLayout: 아무런 배치 속성이 없는 Layout.(무조건 좌측 상단에 붙음) 보통 fragment를 올리는 용도로 많이 씀
 
 ![alt text](https://developer.android.com/images/fragment_lifecycle.png?hl=ko)
 
+
+#### 17-1. Fragment 추가 방법
+- xml에서 직접 추가
+
+```
+<fragment
+    android:id="@+id/fragment1"
+    tools:layout="@layout/fragment_blank"
+    android:name="com.example.a17_fragment.BlankFragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+```
 
 
 ---
